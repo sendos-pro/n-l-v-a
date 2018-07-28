@@ -1,0 +1,12 @@
+{
+	"loopback-component-explorer": {
+		"mountPath": "/explorer",
+		"basePath": "/api/v1"
+	},
+	"loopback-component-model-diagram": {
+		"mountPath": "/diagram"
+	},
+	"loopback-component-visualizer": {
+		"mountPath": "/visual"
+	}
+}

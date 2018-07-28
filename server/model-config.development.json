@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": true,
+    "relations": {
+      "teams": {
+        "type": "belongsTo",
+        "idName": "id",
+        "polymorphic": {
+          "idType": "number",
+          "foreignKey": "userId",
+          "discriminator": "principalType"
+        }
+      },
+      "users": {
+        "type": "belongsTo",
+        "idName": "id",
+        "polymorphic": {
+          "idType": "number",
+          "foreignKey": "userId",
+          "discriminator": "principalType"
+        }
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Users": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Tickets": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Supports": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Partners": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Orders": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Domains": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Relays": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Validations": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Files": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "Polls": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Suspends": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Tools": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "validate": true,
+          "dnsbl": true,
+          "abuse": true,
+          "score": true,
+          "smtp": true,
+          "domain": true
+        }
+      }
+    }
+  },
+  "Others": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Teams": {
+    "dataSource": "db",
+    "public": true
+  }
+}

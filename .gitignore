@@ -1,0 +1,51 @@
+# dependencies
+node_modules
+package-lock.json
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+/www
+
+# Backpack build
+build
+
+#Yarn
+yarn.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Other
+common/models/*
+!common/
+!common/models/
+!common/models/files*
+!common/models/container*
+
+.DS_Store
+
+# OneSignal
+sw.*
+
+# Sync
+ftpsync*
+
+# Cordova
+/platforms
+/plugins
+
+
+
+
+

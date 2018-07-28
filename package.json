@@ -1,0 +1,92 @@
+{
+  "name": "sendos-pro",
+  "version": "1.0.0",
+  "description": "Nuxt + Loopback + Vuetify + Auth",
+  "author": "Adam Tutaev",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sendos-pro/nuxt-lb-vuetify-auth.git"
+  },
+  "scripts": {
+    "dev:admin": "cross-env NODE_ENV=development PORT=3001 node admin.js",
+    "dev:server": "cross-env NODE_ENV=development PORT=3000 nodemon --watch /common --watch /server --ignore storage server.js",
+    "dev:ios": "cordova platform add ios && cordova prepare ios && cordova run ios",
+    "dev:android": "cordova platform add android && cordova prepare android && cordova run android",
+    "dev:browser": "cordova platform add browser && cordova prepare browser && cordova run browser --port=3010",
+    "build:admin": "nuxt build",
+    "build:ios": "cordova platform add ios && cordova prepare ios && cordova build ios",
+    "build:android": "cordova platform add android && cordova prepare android && cordova build android",
+    "start:server": "cross-env NODE_ENV=production PORT=3000 node server.js",
+    "start:admin": "cross-env NODE_ENV=production PORT=3001 nuxt",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.5.1",
+    "@nuxtjs/axios": "^3.1.4",
+    "@nuxtjs/onesignal": "^2.0.0",
+    "axios": "^0.18.0",
+    "compression": "^1.7.3",
+    "cordova": "^8.0.0",
+    "cordova-android": "^7.1.1",
+    "cordova-browser": "^5.0.3",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-geolocation": "^2.4.3",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cors": "^2.5.2",
+    "cross-env": "^5.0.1",
+    "express": "^4.15.3",
+    "feathers-hooks": "^2.0.2",
+    "helmet": "^3.12.1",
+    "is-domain-name": "^1.0.1",
+    "is-email-like": "^1.0.0",
+    "is-ip": "^2.0.0",
+    "js-cookie": "^2.2.0",
+    "loopback": "^3.21.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.1.0",
+    "loopback-component-model-diagram": "^0.4.2",
+    "loopback-component-storage": "^3.5.0",
+    "loopback-component-visualizer": "^1.2.1",
+    "nuxt": "^1.4.0",
+    "onesignal-cordova-plugin": "^2.4.1",
+    "source-map-support": "^0.4.15",
+    "strong-error-handler": "^2.0.0",
+    "vue-cordova": "^0.1.2",
+    "vuetify": "^1.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "localtunnel": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^6.0.6",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": " "
+      },
+      "onesignal-cordova-plugin": {}
+    }
+  }
+}
